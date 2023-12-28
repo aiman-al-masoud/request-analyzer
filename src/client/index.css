@@ -1,0 +1,88 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+input{
+    font-size: medium;
+    margin: auto 10px;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    margin: auto 10px;
+}
+
+.content-div{
+    height: 50vh;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.content-div .card{
+    display: inline-block;
+}
+
+.card{
+    border: solid black 1px;
+    width: fit-content;
+    vertical-align: top;
+    margin: 1vw;
+    font-size: small;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    padding: 10px;
+}
+
+.card-title{
+    text-align: left;
+    font-weight: bold;
+}
+
+.card-title{
+    text-align: left;
+    font-weight: bold;
+}
+
+.card-field{
+    border: solid black thin;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.share-link{
+    background: lightgray;
+    border-radius: 30px;
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+}
+
+.input-widget{
+    padding: 10px;
+    background-color: lightgray;
+    width: fit-content;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.send-button{
+    background-color: lightblue;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    font-size: medium;
+    margin: auto 10px;
+}
+
+/* .status-widget{
+
+} */
