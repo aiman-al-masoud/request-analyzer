@@ -1,4 +1,4 @@
-# Requests Analyzer
+# Request Analyzer
 
 Sends an HTTP request to a specified website, and displays the results for the user to analyze.
 
