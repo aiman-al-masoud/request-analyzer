@@ -39,7 +39,6 @@ def get():
         None,
     ).to_json_str()
 
-
 @app.route('/api/send-request', methods=['GET', 'POST'])
 def send():
     if not request.json:

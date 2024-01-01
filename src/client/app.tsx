@@ -75,12 +75,14 @@ function UrlInfoCard(props: { url: string }) {
 
 function domainOf(url: string) {
     if (!url) return ''
+    if (url.includes(' ')) return ''
     return new URL('http://' + url).host
 }
 
 function pathOf(url: string) {
     if (!url) return ''
-    return new URL('http://' + url).pathname
+    if (url.includes(' ')) return ''
+    return new URL('http://' + url).pathname    
 }
 
 function CardField(props: { keyName: string, value: string }) {
