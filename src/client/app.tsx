@@ -13,6 +13,7 @@ export default function App() {
     useEffect(() => {
         const newRequestId = location.pathname.replace('/', '')
         if (newRequestId === '') return
+        if (newRequestId === requestId) return
         getRequest(newRequestId).then(e => {
             if (e.error !== null || e.request === null || e.responses === null) {
                 alert(e.error)
