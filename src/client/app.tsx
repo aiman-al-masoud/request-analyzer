@@ -82,7 +82,7 @@ function domainOf(url: string) {
 function pathOf(url: string) {
     if (!url) return ''
     if (url.includes(' ')) return ''
-    return new URL('http://' + url).pathname    
+    return new URL('http://' + url).pathname
 }
 
 function CardField(props: { keyName: string, value: string }) {
@@ -93,16 +93,21 @@ function CardField(props: { keyName: string, value: string }) {
 
 function ShareLink(props: { requestId: string }) {
     if (props.requestId) {
-        return <div className='share-link'>
+        return <div>
             <p>SHARE</p>
             <a
-                href={location.protocol + '//' + location.host + '/' + props.requestId}>
-                {location.protocol + '//' + location.host + '/' + props.requestId}
+                className='share-link'
+                href={shareLinkOf(props.requestId)}>
+                {shareLinkOf(props.requestId)}
             </a>
         </div>
     } else {
         return <div></div>
     }
+}
+
+function shareLinkOf(requestId: string) {
+    return location.protocol + '//' + location.host + '/' + requestId
 }
 
 function StatusWidget(props: { statusCode: number, enabled: boolean }) {
@@ -157,21 +162,18 @@ function InputWidget(props: {
             onClick={async () => {
                 const requestId = generateRequestId()
                 props.setRequestId(requestId)
-                const apiResponse = await sendRequest({
+                const r = await sendRequest({
                     url: props.url,
                     request_id: requestId,
                     method: props.httpMethod,
                 })
-                if (
-                    apiResponse.error !== null
-                    || apiResponse.request === null
-                    || apiResponse.responses === null) {
-                    alert(apiResponse.error)
+                if (r.error !== null || r.request === null || r.responses === null) {
+                    alert(r.error)
                     return
                 }
-                props.setResponses(apiResponse.responses)
-                if (apiResponse.responses.length) {
-                    props.setStatusCode(apiResponse.responses.at(-1)!.status_code)
+                props.setResponses(r.responses)
+                if (r.responses.length) {
+                    props.setStatusCode(r.responses.at(-1)!.status_code)
                 }
             }}
         >

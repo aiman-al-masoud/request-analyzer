@@ -53,7 +53,7 @@ select{
 
 .card-field{
     border: solid black thin;
-    padding: 10px;
+    padding: 0 10px;
     border-radius: 5px;
 }
 
@@ -62,7 +62,7 @@ select{
     border-radius: 30px;
     width: fit-content;
     margin: auto;
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .input-widget{
